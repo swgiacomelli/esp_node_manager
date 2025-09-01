@@ -24,7 +24,7 @@ jobs:
       - name: esp-idf build
         uses: espressif/esp-idf-ci-action@v1
         with:
-          path: 'esp32-s3/examples/smart-panel'
+          path: 'esp32/examples/simple'
           esp_idf_version: ${{ matrix.idf_version }}
           target: ${{ matrix.target }}
           
