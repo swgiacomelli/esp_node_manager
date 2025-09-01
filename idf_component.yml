@@ -1,4 +1,5 @@
 version: "0.1.0"
+name: node_manager
 description: "Node Manager: manage node identity, private key, certificate, CA bundle, and signed config in NVS with esp_event notifications"
 license: ISC
 targets:
@@ -12,3 +13,4 @@ targets:
 dependencies:
   idf: ">=5.0"
   # Uses NVS and esp_event from ESP-IDF; FreeRTOS is provided by IDF.
+
