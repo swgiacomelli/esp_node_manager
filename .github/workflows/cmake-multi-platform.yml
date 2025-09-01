@@ -1,0 +1,30 @@
+name: node_manager CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:        
+        build_type: [Release]
+        idf_version: [v5.1, v5.2]
+        target: [esp32s3]
+        
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup ESP-IDF ${{ matrix.idf_version }}
+        uses: espressif/esp-idf-ci-action@v1
+        with:
+          esp_idf_version: ${{ matrix.idf_version }}
+      - name: Build example (simple)
+        working-directory: examples/simple
+        run: |
+          . $IDF_PATH/export.sh
+          idf.py set-target ${{ matrix.target }}
+          idf.py build
