@@ -26,4 +26,5 @@ jobs:
         with:
           path: 'esp32-s3/examples/smart-panel'
           esp_idf_version: ${{ matrix.idf_version }}
-          target: ${{ matrix.target          
+          target: ${{ matrix.target }}
+          
