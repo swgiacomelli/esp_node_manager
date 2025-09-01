@@ -21,10 +21,10 @@ jobs:
       - name: Setup ESP-IDF ${{ matrix.idf_version }}
         uses: espressif/esp-idf-ci-action@v1
         with:
+          esp_idf_version: ${{ matrix.idf_version }}      
+      - name: esp-idf build
+        uses: espressif/esp-idf-ci-action@v1
+        with:
+          path: 'esp32-s3/examples/smart-panel'
           esp_idf_version: ${{ matrix.idf_version }}
-      - name: Build example (simple)
-        working-directory: examples/simple
-        run: |
-          . $IDF_PATH/export.sh
-          idf.py set-target ${{ matrix.target }}
-          idf.py build
+          target: ${{ matrix.target          
