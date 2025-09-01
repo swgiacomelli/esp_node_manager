@@ -35,7 +35,7 @@ If you use the ESP-IDF Component Manager, you can depend on a Git URL directly i
 
 ```yaml
 dependencies:
-    app_bus:
+    node_manager:
         git: https://github.com/swgiacomelli/esp_node_manager
         version: "^0.1.0"
 ```
@@ -82,4 +82,5 @@ The component declares `ESP_EVENT_DECLARE_BASE(NODE_MANAGER_EVENT)`. Event IDs:
 This is pre-release software. Semantic version 0.1.0.
 
 ## License
+
 ISC — see `LICENSE`.
